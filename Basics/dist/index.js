@@ -23,4 +23,21 @@ array.pop();
 array.push(["shyam", 21]);
 // console.log(array);
 const votes = ["shyam", "Mahes", "prabhas", 45, 78, 89];
-console.log(votes);
+const person1 = {
+    name: "shyam",
+    age: 21,
+    employed: true,
+};
+// console.log(person1);
+//=================Functions ====================//
+const addNumber = (a, b) => a + b;
+const value = addNumber(81, 65);
+// console.log(value);
+const greets = (name) => {
+    return `Hello ${name}!`;
+};
+function greet(name, message) {
+    return `Hello, ${name}! ${message || ""}`;
+}
+// console.log(greet("Charlie")); 
+// console.log(greet("Charlie", "Good morning!")); 
