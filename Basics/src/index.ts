@@ -244,3 +244,35 @@ cat = true
 //=========
 
 
+interface Car {
+  name:string,
+  model:string,
+  licence:number
+}
+
+interface Bike {
+  name: string;
+  model: string;
+  Road:boolean
+}
+
+interface Bus extends Car,Bike {
+  seats:number,
+  driver:string
+}
+
+function getBus(params:Bus){
+
+  return `This Bus has ${params.name} and ${params.licence}`
+
+}
+
+const oola = getBus({
+  name: "rtc",
+  model: "modelX",
+  licence: 2334,
+  Road: true,
+  seats: 40,
+  driver: "John Doe"
+});
+console.log(oola);

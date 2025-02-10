@@ -127,6 +127,15 @@ function formatValue(value) {
 // console.log(formatValue(3.1415));  
 let cat;
 cat = true;
-// console.log(cat);
-//Interface Extends
-//=========
+function getBus(params) {
+    return `This Bus has ${params.name} and ${params.licence}`;
+}
+const oola = getBus({
+    name: "rtc",
+    model: "modelX",
+    licence: 2334,
+    Road: true,
+    seats: 40,
+    driver: "John Doe"
+});
+console.log(oola);
