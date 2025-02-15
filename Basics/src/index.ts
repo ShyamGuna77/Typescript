@@ -275,4 +275,42 @@ const oola = getBus({
   seats: 40,
   driver: "John Doe"
 });
-console.log(oola);
+// console.log(oola);
+
+//===================
+//Classes =====
+///===============
+
+type Base = "classic"| "thin"|"thin"|"ROund"
+
+class Pizza {
+  constructor(title:string,price:number){
+  this.title =title,
+  this.price = price
+  }
+
+  addPizzas(toppings:string):void {
+    this.toppings.push(toppings)
+  }
+
+  removePizzas(toppings:string):void{
+    this.toppings = this.toppings.filter((t)=> t!==toppings);
+  }
+  selectBase (b:Base):void{
+    this.base = b
+  }
+
+  title:string
+  price:number
+  base:Base = "classic"
+  toppings:string[] = []
+}
+
+const pizza = new Pizza("Chicken Pizza",15)
+pizza.addPizzas("pineapple")
+pizza.addPizzas("Chicken Tikka");
+pizza.removePizzas("pineapple")
+pizza.selectBase('thin')
+
+// console.log(pizza);
+

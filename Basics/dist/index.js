@@ -138,4 +138,26 @@ const oola = getBus({
     seats: 40,
     driver: "John Doe"
 });
-console.log(oola);
+class Pizza {
+    constructor(title, price) {
+        this.base = "classic";
+        this.toppings = [];
+        this.title = title,
+            this.price = price;
+    }
+    addPizzas(toppings) {
+        this.toppings.push(toppings);
+    }
+    removePizzas(toppings) {
+        this.toppings = this.toppings.filter((t) => t !== toppings);
+    }
+    selectBase(b) {
+        this.base = b;
+    }
+}
+const pizza = new Pizza("Chicken Pizza", 15);
+pizza.addPizzas("pineapple");
+pizza.addPizzas("Chicken Tikka");
+pizza.removePizzas("pineapple");
+pizza.selectBase('thin');
+// console.log(pizza);
