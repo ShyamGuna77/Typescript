@@ -11,29 +11,27 @@ interface Payment {
   notes: string;
 }
 
-type PaymentColumns = (keyof Payment)[];
+type Paymentcolumns = ("id" | "amount" | "to" | "notes")[];
 
 class CsvWriter {
-  private csv: string;
-
-  constructor(private columns: PaymentColumns) {
+  constructor(private columns: Paymentcolumns) {
     this.csv = this.columns.join(",") + "\n";
   }
-
+  private csv: string;
   addRows(values: Payment[]): void {
-    const rows = values.map((v) => this.formatRows(v));
-    this.csv += rows.join("\n") + "\n";
+    let rows = values.map((v) => this.formatRows(v));
+    this.csv += rows.join("\n");
     console.log(this.csv);
   }
 
   private formatRows(p: Payment): string {
-    return this.columns.map((col) => p[col as keyof Payment]).join(",");
+    return this.columns.map((col) => p[col]).join(",");
   }
 }
 
-const csvFile = new CsvWriter(["id", "amount", "to", "notes"]);
+const CsvFile = new CsvWriter(["id", "amount", "to", "notes"]);
 
-csvFile.addRows([
-  { id: 1, amount: 50, to: "Shyam", notes: "for saving the world" },
-  { id: 2, amount: 502, to: "Naidu", notes: "for being awesome" },
+CsvFile.addRows([
+  { id: 1, amount: 50, to: "Shyam", notes: "for saving World" },
+  { id: 2, amount: 502, to: "Naidu", notes: "for being asshole" },
 ]);
