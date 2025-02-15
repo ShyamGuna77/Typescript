@@ -4,6 +4,8 @@
 //==CSV PROJECT==
 //=================
 
+import { appendFileSync } from "fs";
+
 interface Payment {
   id: number;
   amount: number;
@@ -18,6 +20,12 @@ class CsvWriter {
     this.csv = this.columns.join(",") + "\n";
   }
   private csv: string;
+
+  save(fileName:string):void{
+      appendFileSync(fileName,this.csv)
+      console.log("File saved to " ,fileName);
+  }
+
   addRows(values: Payment[]): void {
     let rows = values.map((v) => this.formatRows(v));
     this.csv += rows.join("\n");
@@ -35,3 +43,5 @@ CsvFile.addRows([
   { id: 1, amount: 50, to: "Shyam", notes: "for saving World" },
   { id: 2, amount: 502, to: "Naidu", notes: "for being asshole" },
 ]);
+
+CsvFile.save('./data/payment.csv')
