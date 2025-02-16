@@ -3,6 +3,7 @@
 //==CSV PROJECT==
 //=================
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.CsvWriter = void 0;
 const fs_1 = require("fs");
 class CsvWriter {
     constructor(columns) {
@@ -18,13 +19,8 @@ class CsvWriter {
         this.csv += rows.join("\n");
         console.log(this.csv);
     }
-    formatRows(p) {
-        return this.columns.map((col) => p[col]).join(",");
+    formatRows(value) {
+        return this.columns.map((col) => value[col]).join(",");
     }
 }
-const CsvFile = new CsvWriter(["id", "amount", "to", "notes"]);
-CsvFile.addRows([
-    { id: 1, amount: 50, to: "Shyam", notes: "for saving World" },
-    { id: 2, amount: 502, to: "Naidu", notes: "for being asshole" },
-]);
-// CsvFile.save('./data/payment.txt')
+exports.CsvWriter = CsvWriter;
