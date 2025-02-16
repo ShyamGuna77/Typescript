@@ -44,4 +44,4 @@ CsvFile.addRows([
   { id: 2, amount: 502, to: "Naidu", notes: "for being asshole" },
 ]);
 
-CsvFile.save('./data/payment.csv')
+// CsvFile.save('./data/payment.txt')

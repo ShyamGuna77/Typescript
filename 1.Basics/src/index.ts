@@ -315,6 +315,53 @@ pizza.selectBase('thin')
 // console.log(pizza);
 
 
+//--------------------
+//Generics ---
+//--------------
+
+function identity<T>(value: T): T {
+  return value;
+}
+
+let result = identity<number>(42);  
+let text = identity<string>("Hello"); 
+
+
+function reverseArray<T>(arr: T[]): T[] {
+  return arr.reverse();
+}
+
+// console.log(reverseArray<number>([1, 2, 3]));
+// console.log(reverseArray<string>(["a", "b", "c"]));
 
 
 
+interface Apple <T> {
+  price : T;
+}
+
+let fruit1:Apple<number> = {price:35}
+let fruit2: Apple<string> = { price: "Halwm" };
+
+// console.log(fruit1);
+// console.log(fruit2);
+
+interface Processor <Y> {
+  process(data:Y):Y
+}
+class SuperProcessor implements Processor <string>{
+  process(data:string):string{
+    return data.toUpperCase()
+  }
+}
+
+let process = new SuperProcessor()
+
+
+interface Multiple <T,S> {
+ first :T
+ second :S
+}
+
+let FullNumber:Multiple<number,string> = {first:1,second :"one"}
+console.log(FullNumber);

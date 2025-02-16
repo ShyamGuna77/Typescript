@@ -161,3 +161,24 @@ pizza.addPizzas("Chicken Tikka");
 pizza.removePizzas("pineapple");
 pizza.selectBase('thin');
 // console.log(pizza);
+//--------------------
+//Generics ---
+//--------------
+function identity(value) {
+    return value;
+}
+let result = identity(42);
+let text = identity("Hello");
+function reverseArray(arr) {
+    return arr.reverse();
+}
+let fruit1 = { price: 35 };
+let fruit2 = { price: "Halwm" };
+class SuperProcessor {
+    process(data) {
+        return data.toUpperCase();
+    }
+}
+let process = new SuperProcessor();
+let FullNumber = { first: 1, second: "one" };
+console.log(FullNumber);
