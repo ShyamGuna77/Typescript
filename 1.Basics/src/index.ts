@@ -364,4 +364,51 @@ interface Multiple <T,S> {
 }
 
 let FullNumber:Multiple<number,string> = {first:1,second :"one"}
-console.log(FullNumber);
+// console.log(FullNumber);
+
+
+interface player {
+  name: string;
+  club: string;
+}
+
+class striker implements player {
+  name: string;
+  club: string;
+  jersey: number;
+
+  constructor(name: string, club: string, jersey: number) {
+    this.name = name;
+    this.club = club;
+    this.jersey = jersey;
+  }
+}
+
+let forward = new striker('Ronaldo', 'Real Madrid', 7);
+
+
+function getLengthNumber <T extends {length:number}>(item:T):number{
+  return item.length;
+}
+
+// console.log(getLengthNumber("Hello"));
+// console.log(getLengthNumber([1,2,4]));
+// console.log(getLengthNumber({length:110}))
+// console.log(getLengthNumber(123));
+
+
+interface HasName {
+  name: string;
+}
+
+interface HasAge {
+  age: number;
+}
+
+// T must have both 'name' and 'age'
+function printPerson<T extends HasName & HasAge>(person: T) {
+  console.log(`${person.name} is ${person.age} years old.`);
+}
+
+// printPerson({ name: "John", age: 30 }); // ✅ Works
+// printPerson({ name: "Alice" }); // ❌ ERROR: 'age' is missing

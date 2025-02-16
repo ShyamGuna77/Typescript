@@ -181,4 +181,20 @@ class SuperProcessor {
 }
 let process = new SuperProcessor();
 let FullNumber = { first: 1, second: "one" };
-console.log(FullNumber);
+class striker {
+    constructor(name, club, jersey) {
+        this.name = name;
+        this.club = club;
+        this.jersey = jersey;
+    }
+}
+let forward = new striker('Ronaldo', 'Real Madrid', 7);
+function getLengthNumber(item) {
+    return item.length;
+}
+// T must have both 'name' and 'age'
+function printPerson(person) {
+    console.log(`${person.name} is ${person.age} years old.`);
+}
+// printPerson({ name: "John", age: 30 }); // ✅ Works
+// printPerson({ name: "Alice" }); // ❌ ERROR: 'age' is missing
