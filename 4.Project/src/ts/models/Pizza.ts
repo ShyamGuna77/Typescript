@@ -4,7 +4,7 @@ import { DataResource } from "../services/DataResource";
     title:string
     description:string
     toppings:string[]
-    id:number
+   
     price:number
 }
 
