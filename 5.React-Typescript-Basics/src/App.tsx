@@ -29,14 +29,21 @@ export default function App() {
   return (
     <>
       <main>
-        <Header image = {{src:Goals ,alt :"Goals Image"}}>
+        <Header image={{ src: Goals, alt: "Goals Image" }}>
           <h1>Your Goals</h1>
         </Header>
-        {goals}
+
         <button onClick={handleGoals}>Add Goals</button>
-        <CourseGoal title="Typescript" description="Learn TypeScript">
-          <p>This is a Title</p>
-        </CourseGoal>
+        <ul>
+        {goals.map((goal) => (
+          <li key={goal.id}>
+            <CourseGoal title= {goal.title}>
+              <p>{goal.description}</p>
+            </CourseGoal>
+          </li>
+          
+        ))}
+        </ul>
       </main>
     </>
   );

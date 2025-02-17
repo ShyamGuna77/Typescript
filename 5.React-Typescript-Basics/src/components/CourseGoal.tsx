@@ -2,16 +2,15 @@ import {type  ReactNode } from "react";
 
 interface CourseProps {
   title: string;
-  description: string;
   children:ReactNode
 }
 
-const CourseGoal: React.FC<CourseProps> = ({ title, description}) => {
+const CourseGoal: React.FC<CourseProps> = ({ title, children}) => {
   return (
     <article>
       <div>
         <h2>{title}</h2>
-        <p>{description}</p>
+         {children}
         
       </div>
       <button>Delete</button>
