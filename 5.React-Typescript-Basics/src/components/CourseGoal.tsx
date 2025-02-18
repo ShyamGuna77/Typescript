@@ -2,10 +2,12 @@ import {type  ReactNode } from "react";
 
 interface CourseProps {
   title: string;
+  id:number;
+  onDelete:(id:number) => void
   children:ReactNode
 }
 
-const CourseGoal: React.FC<CourseProps> = ({ title, children}) => {
+const CourseGoal: React.FC<CourseProps> = ({ title,id, children,onDelete}) => {
   return (
     <article>
       <div>
@@ -13,7 +15,7 @@ const CourseGoal: React.FC<CourseProps> = ({ title, children}) => {
          {children}
         
       </div>
-      <button>Delete</button>
+      <button onClick={()=> onDelete(id)}>Delete</button>
     </article>
   );
 }
