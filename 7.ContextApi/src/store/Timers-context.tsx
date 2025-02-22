@@ -75,7 +75,6 @@ switch(action.type){
                 default:
                     return state
 }
-    
 }
 
 
@@ -100,3 +99,5 @@ switch(action.type){
     {children}
    </TimersContext.Provider>
   }
+
+  
