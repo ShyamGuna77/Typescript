@@ -7,12 +7,13 @@ type TimersProps ={
     name:string;
     duration:number;
 }
+
 export default function Timer({name,duration}:TimersProps) {
 
-  const inputInterval = useRef<number | null>(null)
+const inputInterval = useRef<number | null>(null)
  const [remainingTime,setRemainingTime] = useState(duration*1000)
 
- const {isRunning} = useTimersContext()
+const {isRunning} = useTimersContext()
 
  if(remainingTime<= 0 && inputInterval.current) {
  clearInterval(inputInterval.current)
